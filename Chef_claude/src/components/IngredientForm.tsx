@@ -18,10 +18,7 @@ export default function IngredientForm({
   };
 
   return (
-    <form
-      className="flex items-center gap-3 mb-8"
-      onSubmit={handleSubmit}
-    >
+    <form className="flex items-center gap-3 mb-8" onSubmit={handleSubmit}>
       <input
         type="text"
         value={food}

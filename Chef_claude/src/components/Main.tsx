@@ -24,7 +24,6 @@ export default function Main() {
         ))}
       </ul>
 
-      {/* CTA SECTION */}
       <div className="flex items-center justify-between rounded-lg bg-[#F6F5F2] px-6 py-5">
         <div>
           <h3 className="text-sm font-semibold text-gray-900">
