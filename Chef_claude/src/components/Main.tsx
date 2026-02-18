@@ -19,7 +19,7 @@ export default function Main() {
       </h2>
 
       <ul className="list-disc pl-5 space-y-2 text-gray-700">
-        {data.map((item, ind) => (
+        {data.map((item, ind:number) => (
           <li key={ind}>{item}</li>
         ))}
       </ul>

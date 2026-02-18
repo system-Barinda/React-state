@@ -6,7 +6,7 @@ type IngredientFormProps = {
 
 export default function IngredientForm({
   onAddIngredient,
-}: IngredientFormProps) {
+}: Readonly<IngredientFormProps>) {
   const [food, setFood] = useState("");
 
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
