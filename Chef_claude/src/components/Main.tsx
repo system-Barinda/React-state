@@ -1,56 +1,57 @@
 import { useState } from "react";
 
 export default function Main() {
-    const ingridients = [
-        "food",
-        "rice",
-        "then",
-        "done"
-    ];
-    const[data,setData] = useState([ingridients]);
-    const[food,setFood] = useState("");
+  const ingredients = ["Chicken breasts", "Most of the main spices", "Olive oil", "Heavy cream", "Chicken broth", "Parmesan cheese", "Spinach"];
 
- 
-console.log(food)
-const handleSubmit = (e:any) => {
-   e.preventDefault();
-   setData(data.push(food));
+  const [data, setData] = useState<string[]>(ingredients);
+  const [food, setFood] = useState("");
 
-}
-   const d = data.map((data,ind) => {
-    return (
-    
-        <ul className="text-green-800 flex gap-10">
-            <li key={ind} className="m-3">{data}</li>
-        </ul>
-        
-    );
-   })
-    
+  const handleSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
+    e.preventDefault();
+    if (!food.trim()) return;
+
+    setData(prev => [...prev, food]);
+    setFood("");
+  };
+
   return (
-    <main className="pt-[30px] px-[30px] pb-[10px]">
-      <form className="flex justify-center gap-3 h-[38px]" onSubmit={handleSubmit}>
+    <main className="max-w-xl mx-auto px-6 py-8">
+      {/* Form */}
+      <form
+        className="flex items-center gap-3 mb-8"
+        onSubmit={handleSubmit}
+      >
         <input
           type="text"
           value={food}
-           onChange={(e) => setFood(e.target.value)}
+          onChange={(e) => setFood(e.target.value)}
           placeholder="e.g. oregano"
           aria-label="Add ingredient"
-          className="rounded-md border border-gray-300 px-[13px] py-[9px] shadow-sm flex-grow min-w-[150px] max-w-[400px]"
+          className="flex-grow rounded-md border border-gray-300 px-4 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-gray-400"
         />
 
         <button
           type="submit"
-          className="rounded-md bg-[#141413] text-[#FAFAF8] w-[150px] text-sm font-medium flex items-center justify-center"
+          className="flex items-center justify-center gap-1 rounded-md bg-[#141413] text-[#FAFAF8] px-4 py-2 text-sm font-medium hover:opacity-90 transition"
         >
-          <span className="mr-1">+</span>
+          <span className="text-lg leading-none">+</span>
           Add ingredient
         </button>
       </form>
 
-        <h1 className=" mx-auto">ingredient on hand</h1>
-       
-        {d}
+      {/* Title */}
+      <h2 className="text-lg font-semibold text-gray-900 mb-4">
+        Ingredients on hand:
+      </h2>
+
+      {/* Ingredient List */}
+      <ul className="list-disc pl-5 space-y-2 text-gray-700">
+        {data.map((item, ind) => (
+          <li key={ind}>
+            {item}
+          </li>
+        ))}
+      </ul>
     </main>
   );
 }
