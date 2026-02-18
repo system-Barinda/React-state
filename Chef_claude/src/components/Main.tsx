@@ -1,7 +1,29 @@
+import { useState } from "react";
+
 export default function Main() {
+    const ingridients = [
+        "food",
+        "rice",
+        "then",
+        "done"
+    ];
+    const[data,setData] = useState([ingridients]);
+const handleSubmit = () => {
+
+}
+   const d = data.map((data,ind) => {
+    return (
+    
+        <ul className="text-green-800 flex gap-10">
+            <li key={ind} className="m-3">{data}</li>
+        </ul>
+        
+    );
+   })
+    
   return (
     <main className="pt-[30px] px-[30px] pb-[10px]">
-      <form className="flex justify-center gap-3 h-[38px]">
+      <form className="flex justify-center gap-3 h-[38px]" onSubmit={handleSubmit}>
         <input
           type="text"
           placeholder="e.g. oregano"
@@ -17,6 +39,10 @@ export default function Main() {
           Add ingredient
         </button>
       </form>
+
+        <h1 className=" mx-auto">ingredient on hand</h1>
+       
+        {d}
     </main>
   );
 }
