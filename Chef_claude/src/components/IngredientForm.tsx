@@ -9,11 +9,13 @@ export default function IngredientForm({
 }: Readonly<IngredientFormProps>) {
   const [food, setFood] = useState("");
 
-  const handleSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!food.trim()) return;
 
-    onAddIngredient(food);
+    const value = food.trim();
+    if (!value) return;
+
+    onAddIngredient(value);
     setFood("");
   };
 
