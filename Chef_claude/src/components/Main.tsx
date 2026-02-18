@@ -1,9 +1,9 @@
 import { useState } from "react";
-
+import type { Ingredients } from "../types/ingredients";
+import data1 from "../service/ingredients"
 export default function Main() {
-  const ingredients = ["Chicken breasts", "Most of the main spices", "Olive oil", "Heavy cream", "Chicken broth", "Parmesan cheese", "Spinach"];
 
-  const [data, setData] = useState<string[]>(ingredients);
+  const [data, setData] = useState<Ingredients>(data1);
   const [food, setFood] = useState("");
 
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
