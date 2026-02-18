@@ -8,7 +8,13 @@ export default function Main() {
         "done"
     ];
     const[data,setData] = useState([ingridients]);
-const handleSubmit = () => {
+    const[food,setFood] = useState("");
+
+ 
+console.log(food)
+const handleSubmit = (e:any) => {
+   e.preventDefault();
+   setData(data.push(food));
 
 }
    const d = data.map((data,ind) => {
@@ -26,6 +32,8 @@ const handleSubmit = () => {
       <form className="flex justify-center gap-3 h-[38px]" onSubmit={handleSubmit}>
         <input
           type="text"
+          value={food}
+           onChange={(e) => setFood(e.target.value)}
           placeholder="e.g. oregano"
           aria-label="Add ingredient"
           className="rounded-md border border-gray-300 px-[13px] py-[9px] shadow-sm flex-grow min-w-[150px] max-w-[400px]"
