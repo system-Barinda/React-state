@@ -16,7 +16,7 @@ export default function Main() {
 
   return (
     <main className="max-w-xl mx-auto px-6 py-8">
-      {/* Form */}
+  
       <form
         className="flex items-center gap-3 mb-8"
         onSubmit={handleSubmit}
@@ -27,7 +27,7 @@ export default function Main() {
           onChange={(e) => setFood(e.target.value)}
           placeholder="e.g. oregano"
           aria-label="Add ingredient"
-          className="flex-grow rounded-md border border-gray-300 px-4 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-gray-400"
+          className="grow rounded-md border border-gray-300 px-4 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-gray-400"
         />
 
         <button
@@ -39,12 +39,12 @@ export default function Main() {
         </button>
       </form>
 
-      {/* Title */}
+  
       <h2 className="text-lg font-semibold text-gray-900 mb-4">
         Ingredients on hand:
       </h2>
 
-      {/* Ingredient List */}
+     
       <ul className="list-disc pl-5 space-y-2 text-gray-700">
         {data.map((item, ind) => (
           <li key={ind}>
