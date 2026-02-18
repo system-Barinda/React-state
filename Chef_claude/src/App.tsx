@@ -1,8 +1,8 @@
-
+import Header from "./components/Header"
 const App = () => {
   return(
     <>
-    <h1>barinda system sylvere</h1>
+    <Header />
     </>
   )
 }
