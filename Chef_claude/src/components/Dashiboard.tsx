@@ -1,14 +1,15 @@
+// components/Dashboard.tsx
 import { useContext } from "react";
 import { MenuContext } from "./StoreData";
 
 export default function Dashboard() {
   const { menu } = useContext(MenuContext);
-console.log(menu)
+
   return (
-    <div>
+    <nav style={{ display: "flex", gap: "20px" }}>
       {menu.map(item => (
-        <p key={item.id}>{item.name}</p>
+        <span key={item.id}>{item.name}</span>
       ))}
-    </div>
+    </nav>
   );
 }
