@@ -1,20 +1,15 @@
-import { createContext, useState } from "react"
-import {menuItems}  from "../service/menuItems"
-import Dashiboard from "./Dashiboard";
+import { createContext, useState } from "react";
+import { menuItems } from "../service/menuItems";
+import Dashboard from "./Dashiboard";
 
+export const MenuContext = createContext(null);
 
-const menuContext = createContext(null);
+export default function StoreData() {
+  const [menu, setMenu] = useState(menuItems);
 
-
-export default function StoreData(){
-    const [menu,setMenu] = useState(menuItems);
-    
-    return(
-<>
-<menuContext.Provider value={menu}>
-    <Dashiboard />
-    
-</menuContext.Provider>
-</>
-    )
+  return (
+    <MenuContext.Provider value={{ menu, setMenu }}>
+      <Dashboard />
+    </MenuContext.Provider>
+  );
 }
