@@ -13,7 +13,7 @@ export const MenuContext = createContext<MenuContextType>({
 
 export default function StoreData() {
   const [menu] = useState<MenuItem[]>(menuItems);
-
+  console.log(menu)
   return (
     <MenuContext.Provider value={{ menu }}>
       <Dashboard />

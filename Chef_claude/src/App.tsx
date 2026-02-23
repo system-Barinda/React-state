@@ -1,4 +1,4 @@
- import Dashiboard from "./components/Dashiboard";
+ import Dashiboard from "./components/StoreData";
 
 import Main from "./components/Main";
 
