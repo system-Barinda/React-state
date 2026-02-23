@@ -1,10 +1,12 @@
-import Dashiboard from "./components/Dashiboard";
+// import Dashiboard from "./components/Dashiboard";
+
+import StoreData from "./components/StoreData";
 import Main from "./components/Main";
 
 const App = () => {
   return (
     <>
-      <Dashiboard />
+      <StoreData />
       
     </>
   );
