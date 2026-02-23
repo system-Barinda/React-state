@@ -1,9 +1,14 @@
-import { useContext } from "react"
-import menuContext from "../components/StoreData"
-export default function Dashiboard(){
-    const menu = useContext(menuContext)
-    console.log(menu);
-    return(<header className="h-20 w-[100%] flex justify-center items-center text-black shadow gap-20">
-    
-    </header>)
+import { useContext } from "react";
+import { MenuContext } from "./StoreData";
+
+function Dashboard() {
+  const { menu, setMenu } = useContext(MenuContext);
+
+  return (
+    <div>
+      {menu.map(item => (
+        <p key={item.id}>{item.name}</p>
+      ))}
+    </div>
+  );
 }
