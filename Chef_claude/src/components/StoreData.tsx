@@ -3,7 +3,7 @@ import { menuItems } from "../service/menuItems";
 import Dashboard from "./Dashiboard";
 
 
-export type MenuItem = {
+ type MenuItem = {
   id: number;
   name: string;
 };

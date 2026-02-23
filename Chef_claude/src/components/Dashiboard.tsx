@@ -1,15 +1,9 @@
 import { useContext } from "react";
 import { MenuContext } from "./StoreData";
 
-function Dashboard() {
-  const context = useContext(MenuContext);
-
-  if (!context) {
-    throw new Error("Dashboard must be used inside MenuContext.Provider");
-  }
-
-  const { menu, setMenu } = context;
-
+export default function Dashboard() {
+  const { menu } = useContext(MenuContext);
+console.log(menu)
   return (
     <div>
       {menu.map(item => (
@@ -18,5 +12,3 @@ function Dashboard() {
     </div>
   );
 }
-
-export default Dashboard;
