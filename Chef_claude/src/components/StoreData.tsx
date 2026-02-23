@@ -1,20 +1,20 @@
 import { createContext, useState } from "react";
 import { menuItems } from "../service/menuItems";
-import Dashboard from "./Dashboard";
+import Dashboard from "./Dashiboard";
 
-/* Menu item type */
+
 export type MenuItem = {
   id: number;
   name: string;
 };
 
-/* Context type */
+
 type MenuContextType = {
   menu: MenuItem[];
   setMenu: React.Dispatch<React.SetStateAction<MenuItem[]>>;
 };
 
-/* Create context */
+
 export const MenuContext = createContext<MenuContextType>({
   menu: [],
   setMenu: () => {},
