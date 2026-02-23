@@ -1,11 +1,11 @@
-import Header from "./components/Header";
+import Dashiboard from "./components/Dashiboard";
 import Main from "./components/Main";
 
 const App = () => {
   return (
     <>
-      <Header />
-      <Main />
+      <Dashiboard />
+      
     </>
   );
 };
