@@ -1,15 +1,27 @@
 import { createContext, useState } from "react";
 import { menuItems } from "../service/menuItems";
-import Dashboard from "./Dashiboard";
+import Dashboard from "./Dashboard";
+
+/* Menu item type */
+export type MenuItem = {
+  id: number;
+  name: string;
+};
+
+/* Context type */
 type MenuContextType = {
   menu: MenuItem[];
   setMenu: React.Dispatch<React.SetStateAction<MenuItem[]>>;
 };
 
-export const MenuContext = createContext(null);
+/* Create context */
+export const MenuContext = createContext<MenuContextType>({
+  menu: [],
+  setMenu: () => {},
+});
 
 export default function StoreData() {
-  const [menu, setMenu] = useState(menuItems);
+  const [menu, setMenu] = useState<MenuItem[]>(menuItems);
 
   return (
     <MenuContext.Provider value={{ menu, setMenu }}>
